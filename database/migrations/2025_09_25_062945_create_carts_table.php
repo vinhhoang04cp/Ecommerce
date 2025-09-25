@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unique('user_id', 'uniq_carts_user_id');
             $table->index('user_id', 'idx_carts_user_id');
 
-            $table->foreign('user_id')->references('user_id')->on('users')
+            $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('cascade');
         });
     }

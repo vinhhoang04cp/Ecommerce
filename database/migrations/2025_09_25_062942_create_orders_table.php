@@ -22,7 +22,7 @@ return new class extends Migration
             $table->index('status', 'idx_orders_status');
             $table->index('order_date', 'idx_orders_order_date');
 
-            $table->foreign('user_id')->references('user_id')->on('users')
+            $table->foreign('user_id')->references('id')->on('users')
                 ->onUpdate('cascade')->onDelete('restrict');
         });
     }

@@ -23,7 +23,7 @@ return new class extends Migration
 
             $table->index('category_id', 'idx_products_category_id');
             $table->index('name', 'idx_products_name');
-            $table->foreign('category_id')->references('category_id')->on('categories')
+            $table->foreign('category_id')->references('category_id')->on('shop_categories')
                 ->onUpdate('cascade')->onDelete('restrict');
         });
     }

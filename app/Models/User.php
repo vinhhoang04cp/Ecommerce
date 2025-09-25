@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Notifications\Notifiable;
 
 class User extends \TCG\Voyager\Models\User
@@ -43,5 +45,37 @@ class User extends \TCG\Voyager\Models\User
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Quan hệ N-N với Roles qua bảng user_roles
+     * ON DELETE CASCADE - xóa user sẽ xóa luôn các bản ghi user_roles tương ứng
+     */
+    public function roles(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            \App\Models\Models\Role::class,
+            'user_roles',
+            'user_id',
+            'role_id'
+        );
+    }
+
+    /**
+     * Quan hệ 1-N với Carts
+     * ON DELETE CASCADE - xóa user sẽ xóa giỏ hàng của user
+     */
+    public function carts(): HasMany
+    {
+        return $this->hasMany(\App\Models\Models\Cart::class, 'user_id');
+    }
+
+    /**
+     * Quan hệ 1-N với Orders
+     * ON DELETE RESTRICT - không được xóa user nếu còn đơn hàng
+     */
+    public function orders(): HasMany
+    {
+        return $this->hasMany(\App\Models\Models\Order::class, 'user_id');
     }
 }
