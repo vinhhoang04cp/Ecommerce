@@ -56,8 +56,8 @@ class User extends \TCG\Voyager\Models\User
         return $this->belongsToMany(
             \App\Models\Models\Role::class,
             'user_roles',
-            'user_id',
-            'role_id'
+            'user_id',    // Foreign key in pivot table that references this model's primary key (id)
+            'role_id'     // Foreign key in pivot table that references the related model's primary key (id)
         );
     }
 
