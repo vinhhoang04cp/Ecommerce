@@ -9,9 +9,6 @@ class Role extends Model
 {
     protected $table = 'roles';
     
-    // The primary key is 'id' by default, which matches the database structure
-    // protected $primaryKey = 'id'; // This is the default, no need to specify
-    
     protected $fillable = [
         'name',
         'display_name',
@@ -29,20 +26,6 @@ class Role extends Model
             'user_roles',
             'role_id',    // Foreign key in pivot table that references this model's primary key (id)
             'user_id'     // Foreign key in pivot table that references the related model's primary key (id)
-        );
-    }
-
-    /**
-     * Quan hệ N-N với Permissions qua bảng permission_role
-     * Cho phép role có nhiều permissions và permission có thể thuộc nhiều roles
-     */
-    public function permissions(): BelongsToMany
-    {
-        return $this->belongsToMany(
-            \TCG\Voyager\Models\Permission::class,
-            'permission_role',
-            'role_id',        // Foreign key in pivot table that references this model's primary key (id)
-            'permission_id'   // Foreign key in pivot table that references the related model's primary key (id)
         );
     }
 }
