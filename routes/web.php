@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\ShopCategories;
+use App\Http\Controllers\Api\ShopCategory;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,5 +11,5 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-// Shop Categories Routes
-Route::resource('shop_categories', ShopCategories::class);
+// Shop Categories Routes - comment out for now since we're using API routes
+// Route::resource('shop_categories', ShopCategory::class);
