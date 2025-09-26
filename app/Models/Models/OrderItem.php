@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class OrderItem extends Model
 {
     protected $table = 'order_items';
-    
+
     protected $primaryKey = 'item_id';
-    
+
     protected $fillable = [
         'order_id',
         'product_id',
         'quantity',
-        'price' // Đơn giá tại thời điểm đặt hàng (không phụ thuộc giá hiện tại của products)
+        'price', // Đơn giá tại thời điểm đặt hàng (không phụ thuộc giá hiện tại của products)
     ];
 
     protected $casts = [
         'price' => 'decimal:2',
-        'quantity' => 'integer'
+        'quantity' => 'integer',
     ];
 
     /**

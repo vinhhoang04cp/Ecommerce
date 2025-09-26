@@ -8,19 +8,19 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class CartItem extends Model
 {
     protected $table = 'cart_items';
-    
+
     protected $primaryKey = 'item_id';
-    
+
     protected $fillable = [
         'cart_id',
         'product_id',
         'quantity',
-        'price'
+        'price',
     ];
 
     protected $casts = [
         'price' => 'decimal:2',
-        'quantity' => 'integer'
+        'quantity' => 'integer',
     ];
 
     /**

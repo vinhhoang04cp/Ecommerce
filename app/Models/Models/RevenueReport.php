@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 class RevenueReport extends Model
 {
     protected $table = 'revenue_reports';
-    
+
     protected $primaryKey = 'report_id';
-    
+
     protected $fillable = [
         'date',
         'total_revenue',
         'total_orders',
-        'total_products_sold'
+        'total_products_sold',
     ];
 
     protected $casts = [
         'date' => 'date',
         'total_revenue' => 'decimal:2',
         'total_orders' => 'integer',
-        'total_products_sold' => 'integer'
+        'total_products_sold' => 'integer',
     ];
 
     /**
@@ -44,7 +44,7 @@ class RevenueReport extends Model
     public function scopeForMonth($query, $year, $month)
     {
         return $query->whereYear('date', $year)
-                    ->whereMonth('date', $month);
+            ->whereMonth('date', $month);
     }
 
     /**

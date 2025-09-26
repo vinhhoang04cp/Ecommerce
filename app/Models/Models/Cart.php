@@ -9,17 +9,17 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Cart extends Model
 {
     protected $table = 'carts';
-    
+
     protected $primaryKey = 'cart_id';
-    
+
     protected $fillable = [
         'user_id',
         'status',
-        'total_amount'
+        'total_amount',
     ];
 
     protected $casts = [
-        'total_amount' => 'decimal:2'
+        'total_amount' => 'decimal:2',
     ];
 
     /**

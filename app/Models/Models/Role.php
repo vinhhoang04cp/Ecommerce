@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Role extends Model
 {
     protected $table = 'roles';
-    
+
     protected $fillable = [
         'name',
         'display_name',
-        'description'
+        'description',
     ];
-    
+
     /**
      * Quan hệ N-N với Users qua bảng user_roles
      * ON DELETE RESTRICT - không được xóa role nếu còn user đang có role này

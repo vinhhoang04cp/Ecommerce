@@ -10,20 +10,20 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Product extends Model
 {
     protected $table = 'products';
-    
+
     protected $primaryKey = 'product_id';
-    
+
     protected $fillable = [
         'name',
         'description',
         'price',
         'category_id',
         'image',
-        'status'
+        'status',
     ];
 
     protected $casts = [
-        'price' => 'decimal:2'
+        'price' => 'decimal:2',
     ];
 
     /**

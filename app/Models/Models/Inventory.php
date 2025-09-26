@@ -8,22 +8,22 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Inventory extends Model
 {
     protected $table = 'inventories';
-    
+
     protected $primaryKey = 'inventory_id';
-    
+
     protected $fillable = [
         'product_id',
         'quantity_in_stock',
         'reserved_quantity',
         'reorder_level',
-        'last_updated'
+        'last_updated',
     ];
 
     protected $casts = [
         'quantity_in_stock' => 'integer',
         'reserved_quantity' => 'integer',
         'reorder_level' => 'integer',
-        'last_updated' => 'datetime'
+        'last_updated' => 'datetime',
     ];
 
     /**

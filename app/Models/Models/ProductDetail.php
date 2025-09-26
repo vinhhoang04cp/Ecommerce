@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class ProductDetail extends Model
 {
     protected $table = 'product_details';
-    
+
     protected $primaryKey = 'detail_id';
-    
+
     protected $fillable = [
         'product_id',
         'attribute_name',
-        'attribute_value'
+        'attribute_value',
     ];
 
     /**

@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Models\Models;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class ShopCategories extends Model
+class ShopCategory extends Model
 {
     protected $table = 'shop_categories';
 
     protected $primaryKey = 'category_id';
 
+    public $timestamps = false; // Không có timestamps trong migration
+
     protected $fillable = [
         'name',
         'description',
-        'image',
     ];
 
     /**

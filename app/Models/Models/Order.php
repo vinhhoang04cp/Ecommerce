@@ -9,21 +9,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Order extends Model
 {
     protected $table = 'orders';
-    
+
     protected $primaryKey = 'order_id';
-    
+
     protected $fillable = [
         'user_id',
         'order_date',
         'status',
         'total_amount',
         'shipping_address',
-        'payment_method'
+        'payment_method',
     ];
 
     protected $casts = [
         'order_date' => 'datetime',
-        'total_amount' => 'decimal:2'
+        'total_amount' => 'decimal:2',
     ];
 
     /**
