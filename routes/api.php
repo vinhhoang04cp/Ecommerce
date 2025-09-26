@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\ShopCategory as ShopCategoryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\ShopCategory as ShopCategoryController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();

@@ -94,7 +94,7 @@ HTTP Request → Routes → ShopCategoryRequest (Validation) → ShopCategory Co
 - Kiểm tra tồn tại trước khi xóa để đảm bảo tính toàn vẹn dữ liệu
 - Sử dụng phương thức `validated()` để chỉ lấy các trường đã được định nghĩa trong rules, tránh mass assignment
 
-## Khuyến nghị nâng cao:
+## Khuyến nghị nâng cao:                                                                                                                                                                                                                                                                                                                                                                                                                
 1. Thêm authentication và authorization để kiểm soát quyền truy cập API
 2. Thêm rate limiting để ngăn chặn tấn công brute-force
 3. Implement API versioning để dễ dàng nâng cấp trong tương lai
